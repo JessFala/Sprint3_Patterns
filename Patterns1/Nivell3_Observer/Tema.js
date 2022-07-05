@@ -11,13 +11,14 @@ class Tema {
     this.subscripcio = [];
   }
 
-CrearTema(usuarix, tema){
+  let tema = new Tema();
+/*CrearTema(usuarix, tema){
     if(usuarix.nom === undefined) {
         console.log(`Xl usuarix no está registradx`);
     } else {
     console.log(`Xl usuarix: '${usuarix.nom}' ha creat el tema: '${tema}'`);
     this.tema.push(tema);
-    }
+    }*/
 
 }
  
