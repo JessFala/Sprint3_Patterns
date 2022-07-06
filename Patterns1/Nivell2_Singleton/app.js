@@ -18,4 +18,4 @@ let marcador = new Marcador();
 marcador.sumarPunts("Leyva", 4)
 
 joc.marcador.mostrarPunts()
-juego.marcador.guanyadorx()
+joc.marcador.guanyadorx()

@@ -3,13 +3,21 @@ const Marcador = require("./Marcador");
 
 class Joc {
     constructor(nom, puntuacio){
-        this.nom = nom;
+        this.nomGame = nomGame;
         this.jugadorx = [];
         this.puntuacio = puntuacio;
     }
 };
+    afegirJoc(nom)
+    {
+        if (this.nomGame.Joc.some(e =>e.nom ===nomGame.Joc)){
+            console.log (`El joc ${nomGame} està a punt per rebre jugadorx!`)
+        } else {
+            console.log (`El joc ${nomGame} no està disponible.`)
+        }
+    };
 
-    afegirjugadorx(Jugadorx, puntuacio); 
+    afegirjugadorx(jugadorx, puntuacio); 
     {
      if (this.puntuacio.Marcador.some(e => e.nom === nom_jugadorx.Jugadorx)) {
         console.log(`Xl jugadorx ${nom_jugadorx} ja està al joc i a punt per a la propera partida!`)
