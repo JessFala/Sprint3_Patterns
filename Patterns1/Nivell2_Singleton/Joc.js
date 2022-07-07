@@ -25,8 +25,8 @@ class Joc {
         this.puntuacio[jugadorxMarcadorIndex].punts += puntssumats;
         };
         
-    restarPunts() 
-        {
+    restarPunts(jugador) {
+        let
         return this.sort((a, b) => b.punts - a.punts)
         };
 
@@ -41,5 +41,5 @@ class Joc {
         console.log(`Enhorabona, ${this.puntuacio.sort()[0].Jugadorx} !!! Ets xl guanyadorx d'aquesta partida!!! `);
     };
         
-module.exports = Joc;
+module.exports = Joc; 
 
