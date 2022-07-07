@@ -1,23 +1,25 @@
 const Jugadorx = require("./Jugadorx");
 const Marcador = require("./Marcador");
-/* Para cada joc que generaremos habrá un marcador (que será un Singleton). Por eso lo importamos el singleton Marcador como atributo de la clase Juego.
-La clase Juego capta la info de jugador y puntuación a través
-del objeto Marcador (que lo hemos importado como un atributo en el contructor Juego)*/
+/* Para cada joc que generaremos habrá un marcador (que será un Singleton). Por eso importamos el singleton Marcador como atributo de la clase Juego.
+La clase Juego capta la info de jugadorxs y puntuacions a través
+del objeto Marcador (que lo hemos importado como atributo en el contructor Juego)*/
 class Joc {
     constructor(nomGame){
         this.nomGame = nomGame;
         this.marcador= new Marcador();
     }
+}
 //Métodos propios de la clase Joc
 
-    afegirjugadorx(jugadorx) {
+    afegirjugadorx(jugadorx);
+    {
         if(jugadorx instanceof Jugadorx) {
-            this.marcador.jugadorxs.push(jugadorx.nom_jugadorx);   //.push --> Método que sirve para añadir elementos a una array
+            this.marcador.jugadorxs.push(Jugadorx.nom_jugadorx);   //.push --> Método que sirve para añadir elementos a una array
             this.marcador.puntuacions.push(0);
         } else {
             console.log(`Error: ${jugadorx} NO és un objecte Jugadorx`);
         }
-    }
+    };
     
     sumarPunts(Jugadorx, puntssumats)
         {
@@ -25,16 +27,17 @@ class Joc {
         this.puntuacio[jugadorxMarcadorIndex].punts += puntssumats;
         };
         
-    restarPunts(jugador) {
-        let
+    restarPunts(jugadorx); 
+    {
         return this.sort((a, b) => b.punts - a.punts)
-        };
+    };
 
-    reiniciarMarcador()
+    reiniciaMarcador()
     {
         this.jugadorx = [];
-        this.puntuacio = [];
+        this.puntuacions = [];
     };
+    //Mostrar puntuació????
         
     guanyadorx() 
     {
