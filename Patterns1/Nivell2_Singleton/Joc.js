@@ -1,31 +1,23 @@
 const Jugadorx = require("./Jugadorx");
 const Marcador = require("./Marcador");
-
+/* Para cada joc que generaremos habrá un marcador (que será un Singleton). Por eso lo importamos el singleton Marcador como atributo de la clase Juego.
+La clase Juego capta la info de jugador y puntuación a través
+del objeto Marcador (que lo hemos importado como un atributo en el contructor Juego)*/
 class Joc {
-    constructor(nom, puntuacio){
+    constructor(nomGame){
         this.nomGame = nomGame;
-        this.jugadorx = [];
-        this.puntuacio = puntuacio;
+        this.marcador= new Marcador();
     }
-};
-    afegirJoc(nom)
-    {
-        if (this.nomGame.Joc.some(e =>e.nom ===nomGame.Joc)){
-            console.log (`El joc ${nomGame} està a punt per rebre jugadorx!`)
-        } else {
-            console.log (`El joc ${nomGame} no està disponible.`)
-        }
-    };
+//Métodos propios de la clase Joc
 
-    afegirjugadorx(jugadorx, puntuacio); 
-    {
-     if (this.puntuacio.Marcador.some(e => e.nom === nom_jugadorx.Jugadorx)) {
-        console.log(`Xl jugadorx ${nom_jugadorx} ja està al joc i a punt per a la propera partida!`)
-     } else {
-     this.puntuacio.Marcador.push({ Jugadorx: nom_jugadorx, puntuacio: 0 })
-         return console.log(`Xl jugadorx ${Jugadorx.nom_jugadorx} s'ha afegit al joc correctament.`);
+    afegirjugadorx(jugadorx) {
+        if(jugadorx instanceof Jugadorx) {
+            this.marcador.jugadorxs.push(jugadorx.nom_jugadorx);   //.push --> Método que sirve para añadir elementos a una array
+            this.marcador.puntuacions.push(0);
+        } else {
+            console.log(`Error: ${jugadorx} NO és un objecte Jugadorx`);
         }
-    };
+    }
     
     sumarPunts(Jugadorx, puntssumats)
         {
