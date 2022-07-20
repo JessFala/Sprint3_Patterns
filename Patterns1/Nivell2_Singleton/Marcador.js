@@ -11,5 +11,16 @@ class Marcador {
    return this;
   }
 }
+
+mostrarMarcador() 
+{
+  return this.Marcador;
+}
+
+mostrarGuanyadorx()
+{
+  return this.puntuacions.sort()[0];
+}
+
 module.exports = Marcador; 
 

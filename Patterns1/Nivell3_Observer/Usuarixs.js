@@ -2,7 +2,6 @@ class Usuarix {
 
     constructor(nom) {
         this.nom = nom;
-
     }
 }
 

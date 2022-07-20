@@ -1,21 +1,27 @@
-const Jugadorx = require('./Jugadorx');
-const Joc = require('./Joc');
-const Marcador = require('./Marcador');
+const Jugadorx = require("./Jugadorx.js");
+const Joc = require("./Joc.js");
+const Marcador = require("./Marcador.js");
 
-let joc = new Joc("Remigio", 0);
+//Crear un joc
+let joc1 = new Joc("Scrabble", 0);
 
-afegirjugadorx = (new Jugadorx1("Leyva", 16));
-afegirjugadorx = (new Jugadorx2("Thiago", 12));
+//Afegir Jugadorxs
+let jugadorx1 = new jugadorx ("Leyva");
+let jugadorx2 = new jugadorx ("Tero");
+let jugadorx3 = new jugadorx ("Terry");
 
-//Sumar punts
+//Mostrar Jugadorxs
+console.log (joc1.scoreboard.jugadorxs);
+console.log (joc2.scoreboard.jugadorxs);
+console.log (joc3.scoreboard.jugadorxs);
 
-joc.marcador.sumarPunts("Leyva", 4);
-joc.marcador.sumarPunts("Thiago", 1);
+//Mostrar puntuació abans d'iniciar la partida
+console.table (joc1.showMarcador());
+console.table (joc2.showMarcador());
+console.table (joc3.showMarcador());
 
-// Singleton
+//Mostrar puntuació amb els punts sumats
+console.table(joc1.showMarcador());
 
-let marcador = new Marcador();
-marcador.sumarPunts("Leyva", 4)
-
-joc.marcador.mostrarPunts()
-joc.marcador.guanyadorx()
+//Mostrar xl guanyadorx
+console.log(joc1.mostrarGuanyadorx());

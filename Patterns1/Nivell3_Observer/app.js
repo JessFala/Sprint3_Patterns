@@ -1,26 +1,26 @@
-const Usuarix = require('./Usuarixs');
-const Tema = require('./Tema');
+const Usuarix = require('./Usuarix.js');
+const Tema = require('./Tema.js');
 
-//Crear Usuarixs
-let usuarix1 = new Usuarix('Leyva');
-console.log(usuarix1);
+// Crear usuarixs
+const usuarix1 = new Usuarix("Leyva");
+const usuarix2 = new Usuarix("Tero");
 
-let usuarix2 = new Usuarix('Thiago');
-console.log(usuarix2);
+// Crear temes
+const tema1 = new Tema("Tema 1:Comitè benvinguda Tero.");
+const tema2 = new Tema("Tema 2:Agraïments per en Leyva.");
 
-//Crear temes
-let tema = new Tema();
+// Subscripció usuarixs a temes
+usuarix1.subscripcio(tema1);
+usuarix2.subscripcio(tema2);
+usuarix1.subscripcio(tema2);
 
-tema.CrearTema(usuarix1,'Tema del dia: Comitè benvinguda Thiago');
-tema.CrearTema(usuarix1,'Tema del dia: Benvinguda Thiago');
-tema.CrearTema(usuarix2, 'Agraïments pel Leyva');
+// Enviar missatges
 
-//Subscripció a temes
+console.log()
+usuarix1.enviarMissatge(tema1, "Benvingutx Tero!");
 
-tema.subscripcioTemes(usuari2x, 'Agraïments pel Leyva');
+console.log()
+usuarix2.enviarMissatge(tema2, "M'heu fet sentir molt benvingudx. Gràcies, Leyva, per les molèsties que t'has pres");
 
-// A la consola de l'usuarix sortirà un missatge per confirmar-li que està donatx d'alta el missatge.
-
-tema.comunicarMembres (usuarix1, 'TOT OK!!!', "Tema del dia: Comitè benvinguda Thiago");
-tema.comunicarMembres (usuarix1, 'TOT OK!!!', "Tema del dia: Benvinguda Thiago");
-tema.comunicarMembres (usuarix2, 'Et donem la benvinguda!', "M'heu fet sentir molt Benvingudx. Gràcies Leyva per totes les molèsties que t'has pres")
+console.log()
+usuarix1.enviarMissatge(tema2, "Tero, ha estat un plaer i una feina d'equip!");

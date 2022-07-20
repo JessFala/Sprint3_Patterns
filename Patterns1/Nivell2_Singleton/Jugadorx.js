@@ -6,6 +6,4 @@ class Jugadorx {
     }
 };
 
-module.exports = {
-    Jugadorx
-};
+module.exports = Jugadorx

@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/JessFala/Sprint3_Patterns/issues"
   },
-  "homepage": "https://github.com/JessFala/Sprint3_Patterns#readme"
+  "homepage": "https://github.com/JessFala/Sprint3_Patterns#readme",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
 }
