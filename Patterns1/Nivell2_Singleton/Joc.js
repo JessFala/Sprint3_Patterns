@@ -12,38 +12,36 @@ class Joc {
 
     //Métodos propios de la clase 'Joc'
 
-    afegirJugadorx(joc1) {
-        if(joc1 instanceof Jugadorx){
-            this.marcador.jugadorxs.push(jugadorx.nom);
+    afegirJugadorx(jugadorx) {
+        if(jugadorx instanceof Jugadorx){
+            this.marcador.jugadorxs.push(jugadorx.nom_jugadorx);
             this.marcador.puntuacions.push(0);
         }
     }
 
-    sumarPunts(Jugadorx)
-        {
-        let jugadorxMarcadorIndex = this.puntuacions.jugadorxs.indexOf(joc1.nom);
-            if(jugadorxMarcadorIndex !== -1) {
-                this.marcador.puntuacions[jugadorxMarcadorIndex] += 1;
+    sumarPunts(jugadorx){
+        let jugadorxIndex = this.marcador.jugadorxs.indexOf(jugadorx.nom_jugadorx);
+            if(jugadorxIndex !== -1) {
+                this.marcador.puntuacions[jugadorxIndex] += 1;
+                //this.marcador.puntuacions[jugadorxMarcadorIndex] =  this.marcador.puntuacions[jugadorxMarcadorIndex] + 1
             }
         }
         
-    restarPunts(Jugadorx) {
-        let jugadorxMarcadorIndex = this.marcador.jugadorxs.indexOf(joc1.nom);
-        if(jugadorxMarcadorIndex !== -1){
-            this.marcador.puntuacions[jugadorxMarcadorIndex] -= 1;
+    restarPunts(jugadorx) {
+        let jugadorxIndex = this.marcador.jugadorxs.indexOf(jugadorx.nom_jugadorx);
+        if(jugadorxIndex !== -1){
+            this.marcador.puntuacions[jugadorxIndex] -= 1;
         }
     }
     
-    mostrarPuntuacio()
-    {
+    mostrarPuntuacio(){
         return this.marcador;
     }
 
-    mostrarGuanyadorx()   
-    {
+    mostrarGuanyadorx() {
     const maxPuntuacio = Math.max(...this.marcador.puntuacions);
-    const jugadorxMarcadorIndex = this.marcador.puntuacions.indexOf(maxPuntuacio);
-    return (`Enhorabona! Xl guanyadorx de la partida al *${this.nomGame}* és ${this.marcador.jugadorxs[jugadorxMarcadorIndex]}!!!`); 
+    const jugadorxIndex = this.marcador.puntuacions.indexOf(maxPuntuacio);
+    return (`Enhorabona! Xl guanyadorx de la partida al *${this.nomGame}* és ${this.marcador.jugadorxs[jugadorxIndex]}!!!`); 
     }
 }
 
