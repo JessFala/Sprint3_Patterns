@@ -1,56 +1,51 @@
 const Jugadorx = require("./Jugadorx.js");
 const Marcador = require("./Marcador.js");
-/* Para cada joc que generaremos habrá un marcador (que será un Singleton). 
+/* Para cada 'joc' que generaremos habrá un marcador (que será un Singleton). 
 Por eso importamos el singleton Marcador como atributo de la clase Juego.
 La clase Juego capta la info de jugadorxs y puntuacions a través
 del objeto Marcador (que lo hemos importado como atributo en el contructor Juego)*/
 class Joc {
     constructor(nomGame){
         this.nomGame = nomGame;
-        this.marcador= new Marcador();
-        this.arrayJugadorxs = [];
-    }
-}
-//Métodos propios de la clase Joc
-
-    afegirjoc(nomGame);
-    {
-        const joc1 = new Joc ("Srabble");
-    }
-
-    afegirjugadorx(nom_jugadorx);
-    {
-        const jugadorx = new Jugadorx(nom_jugadorx);
-        this.arrayJugadorxs.push(jugadorx);
-    }
-    
-    sumarPunts(Jugadorx)
-        {
-        let jugadorxMarcadorIndex = this.puntuacio.jugadorx.indexOf(Jugadorx.nom_jugadorx);
-            if(jugadorxMarcadorIndex !== -1) {
-                this.Marcador.puntuacio[jugadorxMarcadorIndex] += 1;
-            }
-        };
-        
-    restarPunts(Jugadorx); {
-        let jugadorxMarcadorIndex = this.marcador.jugadorx.indexOf(Jugadorx.nom_jugadorx);
-        if(jugadorxMarcadorIndex !== -1){
-            this.Marcador.puntuacio[jugadorxMarcadorIndex] -= 1;
-        }
+        this.marcador= new Marcador;
     };
 
+    //Métodos propios de la clase 'Joc'
+
+    afegirJugadorx(joc1) {
+        if(joc1 instanceof Jugadorx){
+            this.marcador.jugadorxs.push(jugadorx.nom);
+            this.marcador.puntuacions.push(0);
+        }
+    }
+
+    sumarPunts(Jugadorx)
+        {
+        let jugadorxMarcadorIndex = this.puntuacions.jugadorxs.indexOf(joc1.nom);
+            if(jugadorxMarcadorIndex !== -1) {
+                this.marcador.puntuacions[jugadorxMarcadorIndex] += 1;
+            }
+        }
+        
+    restarPunts(Jugadorx) {
+        let jugadorxMarcadorIndex = this.marcador.jugadorxs.indexOf(joc1.nom);
+        if(jugadorxMarcadorIndex !== -1){
+            this.marcador.puntuacions[jugadorxMarcadorIndex] -= 1;
+        }
+    }
     
-    mostrarPuntuació()
+    mostrarPuntuacio()
     {
-        return this.Marcador;
+        return this.marcador;
     }
 
     mostrarGuanyadorx()   
     {
-    const maxPuntuacio = Math.max(...this.marcador.puntuacio);
-    const jugadorxMarcadorIndex = this.marcador.puntuacio.indexOf(maxPuntuacio);
-    return (`Enhorabona! Xl guanyadorx de la partida al *${this.nomGame}* és ${this.marcador.Jugadorx[jugadorxMarcadorIndex]}!!!`); 
-    };
-    
+    const maxPuntuacio = Math.max(...this.marcador.puntuacions);
+    const jugadorxMarcadorIndex = this.marcador.puntuacions.indexOf(maxPuntuacio);
+    return (`Enhorabona! Xl guanyadorx de la partida al *${this.nomGame}* és ${this.marcador.jugadorxs[jugadorxMarcadorIndex]}!!!`); 
+    }
+}
+
 module.exports = Joc; 
 

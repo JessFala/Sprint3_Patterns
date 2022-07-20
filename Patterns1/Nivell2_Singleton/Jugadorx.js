@@ -1,9 +1,7 @@
 class Jugadorx {
-    constructor (nom_jugadorx, punts){
+    constructor(nom_jugadorx) {
         this.nom_jugadorx = nom_jugadorx;
-        this.punts = punts;
-    
     }
 };
 
-module.exports = Jugadorx
+module.exports = Jugadorx;
