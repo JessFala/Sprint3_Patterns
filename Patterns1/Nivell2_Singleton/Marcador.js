@@ -19,7 +19,7 @@ mostrarMarcador()
 
 mostrarGuanyadorx()
 {
-  return this.puntuacions.sort()[0];
+  return this.puntuacions.sort([0]);
 }
 
 module.exports = Marcador; 
