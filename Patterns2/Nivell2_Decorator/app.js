@@ -7,7 +7,7 @@ const articulos = [
         precio: 10
     },
     {
-        nombre: "V-quero",
+        nombre: "V-aquero",
         div: "CNY",
         precio: 10
     },
