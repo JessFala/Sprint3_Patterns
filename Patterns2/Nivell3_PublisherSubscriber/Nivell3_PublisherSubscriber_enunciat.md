@@ -19,7 +19,7 @@ To execute:
 1) introducir por consola:
 1) enter by console:
 
-     $ node app.js
+     $ npm i
 
 2) Després s'han d'obrir dues terminal i executar per aconseguir que els missatger enviats des de la terminal "sender" es vegin escrits des de la terminal "receiver".
 2) Después deben abrirse dos terminales y ejecutarlas para conseguir que los mensajes enviados desde la terminal "sender" se vean escritos desde la terminal "receiver".

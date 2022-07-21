@@ -5,7 +5,7 @@ var amqp = require('amqplib/callback_api');
 class Subscriber{
 
     recibirMensaje() {
-        amqp.connect('amqp://localhost', function(error0, connection) {
+        amqp.connect("amqp://localhost", function(error0, connection) {
             if (error0) {
                 throw error0;
             }
@@ -14,16 +14,16 @@ class Subscriber{
                     throw error1;
                 }
         
-                var cola = 'Hola!';
+                var cola = "Hola!";
         
                 canal.assegurarCola(cola, {
                     durable: false
                 });
         
-                console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
+                console.log(" [*] Esperando para el mensaje en %s. Para salir presiona CTRL+C", queue);
         
-                canal.consume(cola, function(mensaje) {
-                    console.log(" [x] Recibido %s", mensaje.content.toString());
+                canal.consume(cola, function(message) {
+                    console.log(" [x] Recibido %s", message.content.toString());
                 }, {
                     noAck: true
                 });

@@ -1,35 +1,35 @@
-// Import Publisher and Subscriber classes
+// Importar las clases Publisher y Subscriber
 const Publisher = require('./Publisher');
 const Subscriber = require('./Subscriber');
 
-// Import readline for command line input
-var leerLinia = require('leerLinia');
-var rl = leerLinia.createInterface({
+// Importar readline para el comando de línea input
+var readline = require('leerLinia');
+var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-// Function to recursive ask for new message
-function recursiveAsyncReadLine (publisher) {
-  rl.question('Write and press Enter to send: ', function (msg) {
-    publisher.sendMessage(msg);
-    recursiveAsyncReadLine(publisher);
+// Función para pedir recursivamente un nuevo mensaje
+function recursivaAsyncLeerLinia (publisher) {
+  rl.question("Escribe y presiona Enter para enviar: ", function (message) {
+    publisher.enviarMensaje(message);
+    recursivaAsyncLeerLinia(publisher);
   });
 };
 
-// Take the argument to see if we are sender or receiver
+// Toma del argumento para saber si somos emisores o receptores
 var args = process.argv.slice(2);
 
 if (args[0] != null){
     if (args[0] === 'receiver'){
-        var subscriber = new Subscriber();
-        subscriber.receiveMessages();
+        var suscripcion = new Subscriber();
+        suscripcion.recibirMensaje();
     } else if (args[0] === 'sender') {
         var publisher = new Publisher();
-        recursiveAsyncReadLine(publisher);
+        recursivaAsyncLeerLinia(publisher);
     } else {
-        console.log('Wrong argument. Options available: [sender|receiver]');
+        console.log("Argumento erróneo. Posibles opciones: [sender|receiver]");
     }
 } else {
-    console.log('Wrong argument. Options available: [sender|receiver]');
+    console.log("Argumento erróneo. Posibles opciones: [sender|receiver]");
 }
