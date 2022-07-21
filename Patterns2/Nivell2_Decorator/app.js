@@ -1,28 +1,38 @@
 const conversion = require("./decorator");
 
-const articulos = [
+const textilLanas = [
     {
-        nombre: "C-amiseta",
+        nombre: "lanaDeCordero",
         div: "CAD",
-        precio: 10
+        precio: 9
     },
     {
-        nombre: "V-aquero",
+        nombre: "lanaDeCachemir",
         div: "CNY",
-        precio: 10
+        precio: 23
     },
     {
-        nombre: "J-ersey",
+        nombre: "lanaDeAlpaca ",
         div: "JPY",
-        precio: 10
+        precio: 25
     },
     {
-        nombre: "P-antalon",
+        nombre: "lanaDeCamello",
         div: "CHF",
-        precio: 10
+        precio: 30
+    },
+    {
+        nombre: "lanaDeQiviut",
+        div: "USD",
+        precio: 33
+    },
+    {
+        nombre: "lanaDeShetland",
+        div: "GBP",
+        precio: 28
     }
 ];
 
-console.log(articulos);
-conversion(articulos);
-console.log(articulos);
+console.log(textilLanas);
+conversion(textilLanas);
+console.log(textilLanas);
