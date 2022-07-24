@@ -1,4 +1,4 @@
-const conversion = require("./decorator");
+const conversion = require("./decorator.js");
 
 const textilLanas = [
     {

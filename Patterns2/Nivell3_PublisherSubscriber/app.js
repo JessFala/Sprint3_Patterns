@@ -1,12 +1,12 @@
 // Importar las clases Publisher y Subscriber
-const Publisher = require('./Publisher');
-const Subscriber = require('./Subscriber');
+const Publisher = require("./Publisher");
+const Subscriber = require("./Subscriber");
 
 // Importar readline para el comando de línea input
 var readline = require('leerLinia');
 var rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 // Función para pedir recursivamente un nuevo mensaje
