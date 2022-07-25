@@ -4,14 +4,16 @@ class Middleware {
       this.middlewares = [];
       this.req = {};
 
-      const prototipo = Object.getPrototipotypeOf(this.objetivo);
-    Object.getNombresPropiedades(prototipo).forEach(funcion => {
-      if (funcion !== "constructor") return this.createFn(funcion);
+      const prototype = Object.getPrototypeOf(this.objetivo);
+      Object.getOwnPropertyNames(prototype).forEach(fn => {
+      if (fn !== "constructor") return this.crearFn(fn);
     });
   }
+
   usar(middleware) {
     this.middlewares.push(middleware);
   }
+
   ejecutarMiddleware(i = 0) {
     if (i < this.middlewares.length) {
       this.middlewares[i].call(this, this.req, () =>
@@ -19,6 +21,7 @@ class Middleware {
       );
     }
   }
+
   crearFn(fn) {
     this[fn] = args => {
       this.req = args;

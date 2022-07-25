@@ -12,7 +12,7 @@ class Maths {
   }
 }
 
-const calculator = new Maths();
+const calculadora = new Maths();
 const app = new Middleware(calculadora);
 
 app.usar((req, next) => {
@@ -23,8 +23,7 @@ app.usar((req, next) => {
 });
 
 app.usar((req, next) => {
-    req.a **= 3;
-    req.b **= 3;
+    req.b = req.b * 3 // 2o operador se multplicará por 3
     console.log("middle2", req);
     next();
 });
@@ -37,6 +36,6 @@ app.usar((req, next) => {
   });
 
 
-console.log(app.sumar({a: 3, b: 2}));
+console.log(app.sumar({a: 3, b: 9}));
 console.log(app.restar({a: 3, b: 2}));
-console.log(app.multiplicar({a: 3, b: 2}));
+console.log(app.multiplicar({a: 2, b: 3}));
